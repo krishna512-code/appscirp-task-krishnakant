@@ -1,0 +1,239 @@
+/* MainLayout.css - Figma-matching responsive layout */
+
+.main-bg {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  border-top: 1.5px solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.main-title-area {
+  margin-top: 64px;
+  margin-bottom: 48px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.main-desc {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.main-divider {
+  border: none;
+  border-top: 1.5px solid #e5e5e5;
+  margin: 0 0 48px 0;
+}
+
+.controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 0;
+  border: none;
+  font-size: 1.1rem;
+  gap: 24px;
+}
+.controls-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0 16px;
+  border-radius: 6px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.controls-btn:hover {
+  background: #f0f0f0;
+}
+.controls-sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: auto;
+}
+.sort-trigger {
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  text-align: right;
+  cursor: pointer;
+  padding: 0 16px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+.sidebar-area {
+  min-width: 220px;
+  max-width: 260px;
+  flex-shrink: 0;
+}
+.grid-area {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    max-width: 1000px;
+    padding: 0 16px;
+  }
+  .main-title-area {
+    max-width: 700px;
+  }
+}
+@media (max-width: 900px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  .main-desc {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  .main-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .sidebar-area {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  .main-container {
+    padding: 0 8px;
+  }
+  .main-title {
+    font-size: 1.3rem;
+  }
+  .main-desc {
+    font-size: 0.98rem;
+  }
+  .main-content {
+    gap: 10px;
+  }
+  .controls-bar {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 400px) {
+  .main-title {
+    font-size: 1.1rem;
+  }
+  .main-desc {
+    font-size: 0.9rem;
+  }
+  .main-title-area {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+/* Figma-matching filter toggle and sort dropdown */
+.filter-toggle-link {
+  text-decoration: underline;
+  color: #888;
+  background: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0;
+  margin-right: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.filter-toggle-link:hover {
+  color: #222;
+}
+
+.sort-trigger-figma {
+  border: none;
+  background: #fff;
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 160px;
+  padding: 8px 24px 8px 8px;
+  border-radius: 4px;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+.sort-trigger-figma svg {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.sort-dropdown-figma {
+  background: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  min-width: 160px;
+}
+.sort-dropdown-figma .sort-item {
+  padding: 12px 16px;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: 500;
+  background: none;
+  border: none;
+  text-align: left;
+}
+.sort-dropdown-figma .sort-item-bold {
+  font-weight: 700;
+}
+.sort-dropdown-figma .sort-item[aria-selected="true"],
+.sort-dropdown-figma .sort-item.active {
+  background: #f5f5f5;
+  color: #000;
+  font-weight: 700;
+}
+.sort-dropdown-figma .sort-item:hover {
+  background: #f0f0f0;
+} 
